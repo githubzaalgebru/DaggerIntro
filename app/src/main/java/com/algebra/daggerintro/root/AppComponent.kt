@@ -17,8 +17,8 @@ interface AppComponent : AndroidInjector< DaggerApplication >{
     @Component.Builder
     interface Builder {
         @BindsInstance
-        fun application(application: Application): Builder
+        fun application( application : Application ): Builder
 
-        fun build(): AppComponent
+        fun build( ): AppComponent
     }
 }

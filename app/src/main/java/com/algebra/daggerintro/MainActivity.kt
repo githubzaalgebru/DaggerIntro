@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity( ) {
     @Inject
     lateinit var utils : Utils
 
+    @Inject
+    lateinit var toastService : ToastService
+
     override fun onCreate( savedInstanceState: Bundle? ) {
         super.onCreate( savedInstanceState )
         setContentView( R.layout.activity_main )
@@ -48,8 +51,10 @@ class MainActivity : AppCompatActivity( ) {
         }
         bToast.setOnClickListener {
             Toast
-                .makeText( this, "${ utils.PiValue( ) }", Toast.LENGTH_SHORT )
+              //.makeText( this, application.getString( R.string.app_name ), Toast.LENGTH_SHORT )
+                .makeText( this, toastService.getText( R.string.app_name ), Toast.LENGTH_SHORT )
                 .show( )
+
         }
     }
 }
